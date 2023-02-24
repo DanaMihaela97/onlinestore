@@ -1,0 +1,36 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;   
+    background-color: rgb(183, 76, 76);
+    font-size: 1.2rem;
+    
+}
+
+
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+h1{
+    font-size: 200px;
+    padding-top:400px;
+    padding-left:360px;
+    font-family:'Brush Script MT';
+    color:rgb(166, 30, 155);
+  
+}
+

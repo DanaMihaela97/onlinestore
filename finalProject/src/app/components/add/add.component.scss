@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+
+.form-holder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding:170px;
+  
+}
+
+.form-holder .form-content {
+    position: relative;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    padding: 60px;
+}
+
+.form-content .form-items {
+    border: 3px solid #f8f5f6;
+    padding: 40px;
+    display: inline-block;
+    width: 100%;
+    min-width: 740px;
+    border-radius: 10px;
+    text-align: left;
+ 
+}
+
+.form-content h3 {
+    color: #8a1260;
+    text-align: left;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    
+}
+
+
+.form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
+    width: 100%;
+    padding: 9px 20px;
+    text-align: left;
+    border: 0;
+    border-radius: 6px;
+    background-color: #eed9d2;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 16px;
+}
+.price{
+    font-size:20px;
+    border:0;
+    background-color:#eed9d2;
+    margin-top:16px;
+    padding:9px 20px;
+    font-weight:500;
+    
+}
+.cardstyle{
+    margin-top:20px;
+    margin-left:2px;
+    font-size: 20px;
+}
+.card{
+    margin-top:120px;
+    margin-left:180px;
+    padding: 16px;
+    text-align: center;
+    background-color: #ece7f5;     
+    width: 350px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+ 
+   
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(138, 43, 43, 0.737);
+  }
+.card-text{
+    font-size: 17px;
+    text-align: justify;
+    
+}
+.card-title{
+    font-size:21px;
+    text-align: justify;
+    margin-top:13px;
+    color:red;
+}
+h2{
+    font-size:35px;
+    margin-left:100px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:blue;
+    margin-top:40px;
+
+}
+.button{
+    margin-right:20px;
+    font-size:18px;
+    float:right;
+}
+.deletebtn{
+    margin-top:15px;
+    font-size:18px;
+}
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3 style="margin-left:150px">Add Products</h3>
+                    <form [formGroup]="formValue">
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" formControlName="title" placeholder="Product name"
+                                required>
+                            
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" formControlName="description"
+                                placeholder="Product description" required>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select class="form-select mt-3" formControlName="productType" required>
+                                <option value="" disabled selected>Select the product type</option>
+                                <option *ngFor="let type of productTypes">{{type}}</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select class="form-select mt-3" formControlName="category_name" required>
+                                <option value="" disabled selected>Select the product category</option>
+                                <option *ngFor="let category of categories">{{category.name.charAt(0) +
+                                    category.name.slice(1).toLowerCase()}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <select class="form-select mt-3" formControlName="author_id" required>
+                                <option value="" disabled selected>Select the product author</option>
+                                <option *ngFor="let author of authors">{{author.name.charAt(0) +
+                                    author.name.slice(1).toLowerCase()}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="form-control price" type="number" formControlName="price" placeholder="Price"
+                                required>
+                        </div>
+                       <!--<div class="col-md-12">
+                            <label for="avatar" style="font-size:18px;">Choose a picture:</label>
+                            <br>
+
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+
+                        </div> -->
+                        <div class="col-md-12">
+                            <input class="form-control thumbnail" type="text" formControlName="thumbnail"
+                                placeholder="Product picture" required>
+                        </div>
+                        <br>
+                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            
+                            <button type="button" *ngIf="showAddButton" class="btn btn-primary"
+                                (click)="createProductDetails()">Add</button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
