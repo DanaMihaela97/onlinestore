@@ -1,6 +1,4 @@
 <h1 style="color:rgb(5, 32, 16); font-size: 40px; text-align: center; margin-top: 50px;"><strong>ALL PRODUCTS</strong></h1>
-
-
 <div class="products-body row">
     <div *ngFor="let product of products" style="width: 25rem;">
         <div class="card">
@@ -15,7 +13,7 @@
                 <p class="card-text">Type: <strong>{{product.productType}}</strong> </p>
                 <p class="card-text">Category: <strong>{{product.category_name}} </strong></p>
                 <p class="card-text">Author: <strong>{{product.author_id}}</strong> </p>
-                <p class="card-text" style="font-size:24px;">Price: <strong style="color:red">{{product.price}} LEI</strong></p>
+                <p class="card-text" >Price: <strong style="color:red;font-size:24px;">{{product.price}} LEI</strong></p>
                 <button class="btn btn-primary cardstyle">Add To Cart</button>
                 <div>
                     <button type="button" (click)="deleteProduct(product.id)"

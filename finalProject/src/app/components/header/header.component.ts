@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  searchForm;
 
-  constructor(){}
+  constructor(private formBuilder: FormBuilder){
+    this.searchForm=this.formBuilder.group({
+      search:'',
+    })
+  }
   
 }
  

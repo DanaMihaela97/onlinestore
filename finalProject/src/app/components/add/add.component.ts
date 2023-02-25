@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { ProductModel } from '../product/product-dash-board.model';
+import { UserModel } from '../register/user.model';
 
 
 @Component({
@@ -16,12 +17,16 @@ export class AddComponent implements OnInit {
   categories !: any;
   productTypes !: any;
   authors !: any;
-  showAddButton!: boolean;
-
-  constructor(private api: ApiService, private formBuilder: FormBuilder) { }
+  user !:UserModel;
+  constructor( private formBuilder: FormBuilder,
+     private api:ApiService) { }
 
   ngOnInit(): void {
-    this.showAddButton = true;
+    this.user = new UserModel();
+    this.user.email = String(window.localStorage.getItem("email"))
+    this.user.firstName = String(window.localStorage.getItem("fullName")?.split(" ")[0])
+    this.user.lastName = String(window.localStorage.getItem("fullName")?.split(" ")[1])
+    this.user.role = String(window.localStorage.getItem("role"))
     this.formValue = this.formBuilder.group({
       title: [''],
       description: [''],
@@ -31,7 +36,6 @@ export class AddComponent implements OnInit {
       productType: [''],
       author_id: [''],
     })
-
     // get all categories from DB
     this.api.getCategories().subscribe(res => {
       this.categories = res
@@ -62,12 +66,10 @@ export class AddComponent implements OnInit {
     this.productModelObj.author_id = this.formValue.value.author_id;
 
     this.api.createProduct(this.productModelObj).subscribe(res => {
-      console.log(res);
+      
       alert("Product added!")
-      let ref = document.getElementById('cancel')
-      ref?.click();
       this.formValue.reset();
-      //this.getAllProducts();
+     
     },
       err => { alert("ERROR!") }
 
@@ -75,7 +77,6 @@ export class AddComponent implements OnInit {
   }
   clickAdd() {
     this.formValue.reset();
-    this.showAddButton = true;
-    this.showUpdateButton = false;
+
   }
 }

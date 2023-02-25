@@ -12,11 +12,11 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import {HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './components/product/product.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { CartComponent } from './components/cart/cart.component';
-import { AddComponent } from './components/add/add.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+
+import { AddComponent } from './components/add/add.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HomeComponent,
     RegisterComponent,
     ProductComponent,
-    CartComponent,
     AddComponent,
+    LogoutComponent,
+    
 
  
   ],
@@ -39,7 +40,9 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    FormsModule
+   
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
