@@ -11,59 +11,39 @@ import { UserModel } from './user.model';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit{
-
-  formValue!: FormGroup;
-  // userModelObj: UserModel = new UserModel();
-  // showUpdateButton!: boolean;
-  // users !: UserModel[];
-  // showAddButton!: boolean;
-  registerForm !:FormGroup;
+  formValue !:FormGroup;
   registerModel:UserModel = new UserModel();
+  register!:UserModel;
  
   constructor(private FormBuilder:FormBuilder, private apiService:ApiService, private http:HttpClient){}
 
   ngOnInit(): void {
-    this.registerForm = this.FormBuilder.group({
+    this.formValue = this.FormBuilder.group({
       firstName: [''],
       lastName: [''],
       password: [''],
       email: ['']
-  
-  
     })
   }
-  // register(){
-  //   this.http.post<any>("http://localhost:8080/api/v1/onlinestore/register", this.registerForm.value).subscribe(res=>{
-  //     alert("Registration Successfully!")
-  //     this.registerForm.reset();
-    
-  //   }, err=>{
-  //     alert("ERROR!")
-  //   })
-  // }
- 
     createUserDetails(){
       this.registerModel.firstName = this.formValue.value.firstName;
       this.registerModel.lastName = this.formValue.value.lastName;
       this.registerModel.password = this.formValue.value.password;
       this.registerModel.email = this.formValue.value.email;
    
-
       this.apiService.createUser(this.registerModel).subscribe(res=>{
         alert("You just created an account!");
-        let ref = document.getElementById('cancel')
-        ref?.click();
         this.formValue.reset();
+        window.location.href = "/login"
       },
       err=>{alert("ERROR!")
       this.formValue.reset();}
       )}
       
-  //     clickAdd() {
-  //       this.formValue.reset();
-  //       this.showAddButton = true;
-  //       this.showUpdateButton = false;
+     clickAdd() {
+  this.formValue.reset();
       }
+    }
     
     
   

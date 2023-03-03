@@ -8,6 +8,9 @@ import { ProductComponent } from './components/product/product.component';
 import { RegisterComponent } from './components/register/register.component';
 import { AddComponent } from './components/add/add.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ProductInfoComponent } from './components/product-info/product-info.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
 
 const routes: Routes = [
   {
@@ -41,7 +44,24 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddComponent
+  },
+  {
+    path:'cart',
+    component:CartComponent
+  },
+  { 
+    path:'products/:id',
+    component:ProductInfoComponent
+  },
+  {
+    path:'product/search/:searchTerm',
+    component:ProductComponent
+  },
+  {
+    path:'edit',
+    component:ProductEditComponent
   }
+  
 
 
 ];

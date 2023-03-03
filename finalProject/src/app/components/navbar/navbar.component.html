@@ -1,80 +1,80 @@
+
 <nav>
-  <ul>
-    <li><a href="/home">Home</a></li>
-    <li><a href="/product">Products</a></li>
+ 
+  <ul >
+    <li><a routerLink="/home"><b>Home</b></a></li>
+    <li><a routerLink="/product"><b>Products</b></a></li>
 
     <li>
-      <a>Brand</a>
+      <a><b>Brand</b></a>
       <ul>
-        <li><a href="{{location}}?&author=apple">Apple</a></li>
-        <li><a href="{{location}}?&author=beko">Beko</a></li>
-        <li><a href="{{location}}?&author=bosch">Bosch</a></li>
-        <li><a href="{{location}}?&author=huawei">Huawei</a></li>
-        <li><a href="{{location}}?&author=hyperx">HyperX</a></li>
-        <li><a href="{{location}}?&author=logitech">Logitech</a></li>
-        <li><a href="{{location}}?&author=razer">Razer</a></li>
-        <li><a href="{{location}}?&author=samsung">Samsung</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'apple'}">Apple</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'beko'}">Beko</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'bosch'}">Bosch</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'huawei'}">Huawei</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'hyperx'}">HyperX</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'logitech'}">Logitech</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'razer'}">Razer</a></li>
+        <li><a routerLink="/product" [queryParams]="{'author':'samsung'}">Samsung</a></li>
 
       </ul>
     </li>
 
 
     <li>
-      <a href="{{location}}?category=electronics">Electronics</a>
+      <a routerLink="/product" [queryParams]="{'category': 'electronics'}"><b>Electronics</b></a>
       <ul>
-        <li><a href="{{location}}?&type=laptop">Laptops</a></li>
-        <li><a href="{{location}}?&type=telephone">Telephones</a></li>
-        <li><a href="{{location}}?&type=tablet">Tablets</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'laptop'}">Laptops</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'telephone'}">Telephones</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'tablet'}">Tablets</a></li>
 
       </ul>
     </li>
 
     <li>
-      <a href="{{location}}?category=gaming">Gaming</a>
+      <a routerLink="/product" [queryParams]="{'category': 'gaming'}"><b>Gaming</b></a>
       <ul>
-        <li><a href="{{location}}?&type=keyboard">Keyboards</a></li>
-        <li><a href="{{location}}?&type=headphones">Headphones</a></li>
-        <li><a href="{{location}}?&type=mouse">Mouse</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'keyboard'}">Keyboards</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'headphones'}">Headphones</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'mouse'}">Mouse</a></li>
 
       </ul>
     </li>
 
     <li>
-      <a href="{{location}}?category=electrocasnics">Electrocasnics</a>
+      <a routerLink="/product" [queryParams]="{'category': 'appliances'}"><b>Appliances</b></a>
       <ul>
-        <li><a href="{{location}}?&type=fridge">Fridges</a></li>
-        <li><a href="{{location}}?&type=washing_machine">Washing Machines</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'appliances', 'productType': 'fridge'}">Fridges</a></li>
+        <li><a routerLink="/product" [queryParams]="{'category': 'appliances', 'productType': 'washing_machine'}">Washing Machines</a></li>
 
       </ul>
     </li>
     
     <div *ngIf="authenticated=='false'">
       <li>
-        <a href="/login">Log In</a>
+        <a routerLink="/login"><b>LogIn</b></a>
         <!-- if pt log out ngIf -->
       </li>
     </div>
 
     <div *ngIf="authenticated=='true'">
       <li>
-        <a href="/logout">Log Out</a>
+        <a routerLink="/logout" ><b style="white-space: nowrap;">LogOut</b></a>
       </li>
     </div>
 
-    <li>
-      <a href="/footer">Contact</a>
-
-    </li>
-    <li>
-      <a href="/cart">Your Cart</a>
-
-    </li>
     <div *ngIf="user.role == 'ROLE_ADMIN'">
       <li>
-        <a href="/add">Add Product</a>
+        <a routerLink="/add"><b style="white-space: nowrap;">Add Product</b></a>
 
       </li>
     </div>
+    <div *ngIf="authenticated=='true'">
+      <li>
+        <a routerLink = "/cart"> <img src="../assets/img/trolley.png" style="width: 30px; margin-left: 10px;"></a>
+      </li>
+    </div>
+    
   </ul>
 
 </nav>

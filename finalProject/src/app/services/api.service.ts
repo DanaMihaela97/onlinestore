@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { ProductModel } from '../components/product/product-dash-board.model';
 import { UserModel } from '../components/register/user.model';
 
 
@@ -16,6 +17,10 @@ export class ApiService {
     () {
       throw new Error('Method not implemented.');
   }
+
+  
+  // for search bar
+  private url:string='http://localhost:8080/api/v1/onlinestore'
   isLogged: boolean = false;
   user!: UserModel;
   constructor(private http:HttpClient) { }
@@ -23,6 +28,13 @@ export class ApiService {
     console.log(data)
     return this.http.post<any>("http://localhost:8080/api/v1/onlinestore/products", data);
    
+  }
+  // search bar
+  getProductById(id: any) {
+    return this.http.get<any>("http://localhost:8080/api/v1/onlinestore/products/" + id)
+  }
+  getProd(productTitle:string){
+    return this.http.get(`${this.url}/products/search?q=${productTitle}`)
   }
   getProducts(){
     return this.http.get<any>("http://localhost:8080/api/v1/onlinestore/products")
@@ -36,6 +48,11 @@ export class ApiService {
   }
   deleteProduct(id:any){
     return this.http.delete<any>("http://localhost:8080/api/v1/onlinestore/products/" + id)
+  }
+  // data=body
+  updateProduct(data :any, id: any){
+    console.log(data)
+    return this.http.put<any>("http://localhost:8080/api/v1/onlinestore/products/" + id, data)
   }
 
 

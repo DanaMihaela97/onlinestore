@@ -1,26 +1,24 @@
-#searchbar{
-    margin-left:400px;
- 
+img{
+    display: block;
+    margin-top: auto;
+    margin-bottom: auto;
 }
-#searchbtn{
-    margin-right:400px;
+.buttoncart{
+    color:rgb(99, 15, 65);
+    margin-left:1350px;
+    font-size:0.9vw;
+    
+   
 }
-.search{
-    margin-top:10px;
+#greeting{
+    margin-top: 20px;
+    margin-left: 1000px;
+    font-size: 1.5rem;
+    color:rgb(8, 113, 64);
 }
-#user-cart{
-    margin-right:30px;
-
-}
-.form-control{
-    border-radius: 3px;
-    width: 600px;
-    margin-left: 60px;
-    margin-top:14px;
-}
-#loupe{
-    margin-top: 21px;
-    position: absolute;
-    right:48%;
-
+#store_name{
+    margin-left:20px;
+    font-family:'Brush Script MT', cursive;
+    font-size: 50px;
+    color:rgb(8, 113, 64);
 }

@@ -1,0 +1,29 @@
+<div class="card-table">
+    <div class="cart-product">
+        <table class="table table-responsive tableCart">
+            <thead>
+                <tr>
+                    <th>No.Crt</th>
+                    <th>Title</th>
+                    <th>Product Type</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of products; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{product.title}}</td>
+                    <td>{{product.productType}}</td>
+                    <td>{{product.author_id}}</td>
+                    <td style="width: 100px;">{{product.price.toFixed(2)}} lei</td>
+                    <td>
+                        <button (click)="removeProd(product)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+                <td colspan="4"></td>
+                <td style="color:red"><strong>Total Price: {{total.toFixed(2)}} lei</strong></td>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+
+<div class="infopage">
+    <div id="title"><b>{{product.title}}</b></div>
+<img src="{{product.thumbnail}}" style="width: 30%;">
+
+    <ul class="info">
+        <li>Description: <b>{{product.description}}</b></li>
+        <br>
+        <li>Category: <b>{{product.category_name}}</b></li>
+        <br>
+        <li>Brand: <b>{{product.author_id}}</b></li>
+        
+        <li> Price: <b style="color:red; font-size:2.5rem;">{{product.price.toFixed(2)}} LEI</b></li>
+      </ul>
+
+<div *ngIf="authenticated=='true'">
+    <button type="button" class="btn btn-success addtocartbtn" (click)="addInCart(product)">Add To Cart</button>
+</div> 
+<app-product-edit [product]="product"></app-product-edit>
+</div>

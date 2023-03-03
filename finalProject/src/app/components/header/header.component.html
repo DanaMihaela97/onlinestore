@@ -2,17 +2,9 @@
 <header >
   <div class="navbar navbar-dark bg-light" >
     <div class="navbar-brand d-flex" >
-      <img src="../assets/img/girl2.png" style="margin-left:20px;">
-        <b style="margin-left:20px; font-family:'Brush Script MT', cursive; font-size: 50px; color:rgb(199, 77, 163); margin-top:23px">
-          Dani's store</b>  
-          <div class="form-group"  >
-            <form>
-            <input type="text"  class ="form-control" placeholder="Căutare produs">
-            <button type="button" > go search</button>
-          </form>
-          </div>   
-          
-        
+      <img src="../assets/img/girl.png" style="margin-left:20px;">
+        <b id = "store_name">Dani's store</b>  
+        <div id="greeting" *ngIf="authenticated == 'true'">Greetings, {{user.firstName}}</div>
     </div>
 
   </div>

@@ -3,7 +3,7 @@ import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
-import { AddComponent } from '../add/add.component';
+
 import { UserModel } from '../register/user.model';
 
 @Component({
@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit {
     this.api.signIn(this.userForm).subscribe(res => {
         this.user = res
         if (this.user.email == this.signUpForm.value.email) {
-          alert("Login worked!")
           window.localStorage.clear()
           window.localStorage.setItem("email", res.email)
           window.localStorage.setItem("fullName", res.fullName)
@@ -40,14 +39,13 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['']).then(()=>{
             window.location.reload();
           })
-    
           return true
         }
         return false
 
       }, err => {
-        alert("ERROR")
-        this.signUpForm.reset();
+        alert("Email/password combination is wrong!")
+        this.signUpForm.get("password")?.reset();
       })
   }
 

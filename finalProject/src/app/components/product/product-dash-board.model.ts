@@ -4,7 +4,7 @@ export class ProductModel{
     description:string='';
     thumbnail:string='';
     category_name:string='';
-    price:string='';
+    price:number=0;
     productType:string='';
     author_id:string='';
 }
