@@ -18,6 +18,7 @@ export class AddComponent implements OnInit {
   productTypes !: any;
   authors !: any;
   user !:UserModel;
+  
   constructor( private formBuilder: FormBuilder,
      private api:ApiService) { }
 
@@ -27,6 +28,7 @@ export class AddComponent implements OnInit {
     this.user.firstName = String(window.localStorage.getItem("fullName")?.split(" ")[0])
     this.user.lastName = String(window.localStorage.getItem("fullName")?.split(" ")[1])
     this.user.role = String(window.localStorage.getItem("role"))
+    
     this.formValue = this.formBuilder.group({
       title: [''],
       description: [''],

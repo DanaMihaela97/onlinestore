@@ -24,6 +24,8 @@ export class ApiService {
   isLogged: boolean = false;
   user!: UserModel;
   constructor(private http:HttpClient) { }
+
+  
   public createProduct(data:any){
     console.log(data)
     return this.http.post<any>("http://localhost:8080/api/v1/onlinestore/products", data);

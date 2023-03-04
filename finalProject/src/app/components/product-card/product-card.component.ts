@@ -37,8 +37,6 @@ export class ProductCardComponent implements OnInit {
     console.log("Am apasat pe ", product_id)
   }
   addInCart(product: any) {
-    
-    this.cartService.increment()
     this.cartService.addToCart(product)
     alert("Added in cart")
   }

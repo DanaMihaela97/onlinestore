@@ -53,13 +53,12 @@
     <div *ngIf="authenticated=='false'">
       <li>
         <a routerLink="/login"><b>LogIn</b></a>
-        <!-- if pt log out ngIf -->
       </li>
     </div>
 
     <div *ngIf="authenticated=='true'">
       <li>
-        <a routerLink="/logout" ><b style="white-space: nowrap;">LogOut</b></a>
+        <a routerLink="/logout" ><b>LogOut</b></a>
       </li>
     </div>
 

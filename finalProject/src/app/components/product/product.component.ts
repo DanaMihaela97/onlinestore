@@ -17,24 +17,21 @@ export class ProductComponent implements OnInit {
 
   formValue!: FormGroup;
   productModelObj: ProductModel = new ProductModel();
-  showUpdateButton!: boolean;
   products !: ProductModel[];
   categories !: any;
   productTypes !: any;
   authors !: any;
-  showAddButton!: boolean;
   queryParams !: any;
   params !: any;
   searchTerm: String = ""
   productType: String = ""
-
-  // from navbar
   location!: String;
   user!: UserModel
   authenticated: string = ""
 
   constructor(private api: ApiService, private formBuilder: FormBuilder, private router: Router,
     private route: ActivatedRoute, private cartService: CartService) {
+
     route.params.subscribe(params => {
       if (params.searchTerm) {// if search has any value
         this.searchTerm = params.searchTerm
@@ -44,7 +41,6 @@ export class ProductComponent implements OnInit {
     this.api.getCategories().subscribe(res => {
       this.categories = res
     })
-
     // get all product types from DB
     this.productTypes = [
       "HEADPHONES",
@@ -62,7 +58,7 @@ export class ProductComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    //from navbar
+   
     if (window.localStorage.getItem("authenticated") == null)
       window.localStorage.setItem("authenticated", "false")
 
@@ -72,9 +68,8 @@ export class ProductComponent implements OnInit {
     this.user.lastName = String(window.localStorage.getItem("fullName")?.split(" ")[1])
     this.user.role = String(window.localStorage.getItem("role"))
     this.authenticated = String(window.localStorage.getItem("authenticated"))
-
-
-
+    
+ // reactualizare dupa navigare
     this.route.queryParams.subscribe(p => {
       this.queryParams = p
       console.log(this.queryParams)
@@ -85,25 +80,8 @@ export class ProductComponent implements OnInit {
       console.log(this.params)
       this.getAllProducts()
     });
-    // this.route.params.subscribe(params => {
-    //   if (params.searchTerm) {
-    //     this.api.getProducts().subscribe(res => {
-    //       this.products = res;
-    //       this.products = this.products.filter(
-    //         product => product.title.toLowerCase().includes(params.searchTerm.toLowerCase())
-    //       )
 
-    //     })
-    //   } else {
-    //     this.getAllProducts()
-    //   }
-    // })
-    // get all products from DB
-    // this.api.getProducts().subscribe(res => {
-    //   this.products = res;
-    // })
-
-    this.showAddButton = true;
+    
     this.formValue = this.formBuilder.group({
       title: [''],
       description: [''],

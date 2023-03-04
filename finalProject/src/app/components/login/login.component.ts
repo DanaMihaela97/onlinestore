@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   signUpForm!: FormGroup;
   user !:UserModel;
   userForm :UserModel = new UserModel();
-  constructor(private formBuilder: FormBuilder, private http: HttpClient,
+  constructor(private formBuilder: FormBuilder,
      private router: Router, private api: ApiService) { }
   ngOnInit(): void {
     this.signUpForm = this.formBuilder.group({

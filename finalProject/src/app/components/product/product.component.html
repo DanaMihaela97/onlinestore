@@ -8,87 +8,11 @@
     
 </div>
 <div class="products-body row">
-    <div *ngFor="let product of products" style="width: 35rem;">
+    <div *ngFor="let productDB of products" style="width: 35rem;">
         <div class="card">
             <div class="card-body">
-                <!-- <img src={{product.thumbnail}} class="card-img-top" alt="...">
-
-
-                <h5 class="card-title" style="overflow:hidden;text-overflow:ellipsis; ">
-                    <strong>{{product.title}}</strong></h5>
-                <div>
-
-                    <p class="card-text" style="overflow:hidden;text-overflow:ellipsis;">Description:
-                        {{product.description}}</p>
-                    <p class="card-text">Type: <strong>{{product.productType}}</strong> </p>
-                    <p class="card-text">Category: <strong>{{product.category_name}} </strong></p>
-                    <p class="card-text">Author: <strong>{{product.author_id}}</strong> </p>
-                    <p class="card-text">Price: <strong style="color:red;font-size:24px;">{{product.price}} LEI</strong>
-                    </p>
-                    <div *ngIf="authenticated=='true'">
-
-                        <button class="btn btn-primary cardstyle" (click)="addInCart(product)">Add To Cart</button>
-                    </div>
-
-                    <div *ngIf="user.role == 'ROLE_ADMIN'">
-                        <button type="button" (click)="deleteProduct(product.id)"
-                            class="btn btn-danger deletebtn">Delete</button>
-                        <button (click)="editProductDetail(product)" class="btn btn-info infobtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
-                    </div>
-                </div> -->
-                <app-product-card [product]="product"></app-product-card>
+                <app-product-card [product]="productDB"></app-product-card>
             </div>
         </div>
     </div>
 </div>
-<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Product Details</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form [formGroup]="formValue">
-                    <div class="mb-3">
-                        <label for="textInput" class="form-label">Title</label>
-                        <input type="text" formControlName="title" class="form-control" id="textInput"
-                            aria-describedby="emailHelp">
-
-                    </div>
-                    <div class="mb-3">
-                        <label for="descriptionInput" class="form-label">Description</label>
-                        <input type="text" formControlName="description" class="form-control"
-                            id="descriptionInput">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="categoryInput" class="form-label">Category Name</label>
-                        <input type="text" formControlName="category_name" class="form-control"
-                            id="categoryInput">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="priceInput" class="form-label">Price</label>
-                        <input type="text" formControlName="price" class="form-control" id="priceInput">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="typeInput" class="form-label">Product Type</label>
-                        <input type="text" formControlName="productType" class="form-control"
-                            id="typeInput">
-                    </div>
-                    <div class="mb-3">
-                        <label for="authorInput" class="form-label">Author</label>
-                        <input type="text" formControlName="author_id" class="form-control" id="authorInput">
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" (click)="updateProductDetail()" class="btn btn-primary">Update</button>
-            </div>
-        </div>
-    </div>
-</div> -->

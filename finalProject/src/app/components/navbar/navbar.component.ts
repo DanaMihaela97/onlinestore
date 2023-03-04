@@ -10,13 +10,11 @@ export class NavbarComponent implements OnInit{
 location!: String;
 user!:UserModel
 authenticated:string=""
+
 ngOnInit(){
   if(window.localStorage.getItem("authenticated") == null)
     window.localStorage.setItem("authenticated", "false")
-  this.location = window.location.pathname
-  if(this.location != "/product") // => home/clients/contact/cart/addprod
-    this.location="/product"
-  console.log(this.location)
+
   this.user = new UserModel();
   this.user.email = String(window.localStorage.getItem("email"))
   this.user.firstName = String(window.localStorage.getItem("fullName")?.split(" ")[0])

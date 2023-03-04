@@ -26,7 +26,7 @@ export class CartComponent implements OnInit {
   }
   removeProd(product: any) {
     this.cartService.removeProduct(product);
-    this.ngOnInit();
+    this.ngOnInit(); // refresh
   }
 
 }
