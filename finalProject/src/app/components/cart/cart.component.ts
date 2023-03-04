@@ -18,6 +18,7 @@ export class CartComponent implements OnInit {
 
   }
   ngOnInit() {
+    this.total=0;
     this.products = this.cartService.getAllProducts()
     this.products.forEach(product => {
       this.total += product.price
@@ -25,8 +26,8 @@ export class CartComponent implements OnInit {
   }
   removeProd(product: any) {
     this.cartService.removeProduct(product);
+    this.ngOnInit();
   }
-  
 
 }
 
