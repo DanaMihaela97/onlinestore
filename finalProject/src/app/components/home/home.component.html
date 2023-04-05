@@ -1,3 +1,20 @@
-
 <div class="welcome">Welcome to Dani's Store!</div> 
-
+<div id="banner" style="overflow: hidden; display: inline-block;">
+    <div class="images" style="margin-top: 4%">
+        <a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'laptop'}">
+            <img src ="../assets/img/laptop.png" style="width: 35rem; margin-right: 10%; margin-left:10%"></a>
+        <a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'telephone'}">
+            <img src ="../assets/img/tel2.png" style="width: 30rem;margin-right: 10%; "></a>
+        <a routerLink="/product" [queryParams]="{'category': 'electronics', 'productType' : 'tablet'}">
+            <img src ="../assets/img/tablet.png" style="width: 25rem; margin-right: 2%;"></a>
+        <a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'keyboard'}">
+            <img src ="../assets/img/keyb.png" style="width: 25rem; margin-right:9%; margin-left:13%; margin-top:3%"></a>
+        <a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'headphones'}">
+            <img src ="../assets/img/headph.png" style="width: 30rem;margin-right: 13%;margin-left:5%;margin-top:3%"></a>
+        <a routerLink="/product" [queryParams]="{'category': 'gaming', 'productType' : 'mouse'}">
+            <img src ="../assets/img/mouse.png" style="width: 15rem; margin-right:6%;margin-top:3%"></a>
+        <a routerLink="/product" [queryParams]="{'category': 'appliances', 'productType': 'washing_machine'}">
+            <img src ="../assets/img/washing2.png" style="width: 30rem;margin-right: 15%;margin-left:25%;margin-top:5%; "></a>  
+        <a routerLink="/product" [queryParams]="{'category': 'appliances', 'productType': 'fridge'}">
+            <img src ="../assets/img/fridge.png" style="width: 30rem;margin-top: 5%; "></a>
+    </div>

@@ -11,6 +11,11 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { BuyComponent } from './components/buy/buy.component';
+import { OrderstatusComponent } from './components/orderstatus/orderstatus.component';
+import { MyordersComponent } from './components/myorders/myorders.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { OrderInfoComponent } from './components/order-info/order-info.component';
 
 const routes: Routes = [
   {
@@ -60,10 +65,27 @@ const routes: Routes = [
   {
     path:'edit',
     component:ProductEditComponent
-  }
-  
-
-
+  },
+  {
+    path:'buy',
+    component:BuyComponent
+  },
+  {
+    path:'orders/:id',
+    component:OrderstatusComponent
+  },
+{
+  path:'orders',
+  component:MyordersComponent
+},
+{
+  path:'user-edit',
+  component:UserEditComponent
+},
+{
+  path:'order-info/:id',
+  component:OrderInfoComponent
+}
 ];
 
 @NgModule({

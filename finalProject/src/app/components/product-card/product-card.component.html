@@ -4,10 +4,10 @@
     <h5 class="title">
         <strong>{{product.title}}</strong>
     </h5>
-    <p class="price">Price: <strong style="color:red;font-size:24px;">{{product.price.toFixed(2)}} LEI</strong></p>
+    <p class="price">Price: <strong style="color:red;font-size:1.4rem;">{{product.price.toFixed(2)}} LEI</strong></p>
 </div>
-<div>
-    <div *ngIf="authenticated=='true'" id="container">
+<div  >
+    <div  *ngIf="authenticated=='true'" id="container">
         <button type="button" class="btn btn-primary addtocartbtn" (click)="addInCart(product)">Add To Cart</button>
         <div *ngIf="user.role == 'ROLE_ADMIN'">
             <button type="button" class="btn btn-danger deletebtn" (click)="deleteProduct(product.id)">Delete</button>

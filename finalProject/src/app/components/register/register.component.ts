@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 import { UserModel } from './user.model';
 
@@ -15,7 +14,7 @@ export class RegisterComponent implements OnInit{
   registerModel:UserModel = new UserModel();
   register!:UserModel;
  
-  constructor(private FormBuilder:FormBuilder, private apiService:ApiService, private http:HttpClient){}
+  constructor(private FormBuilder:FormBuilder, private apiService:ApiService){}
 
   ngOnInit(): void {
     this.formValue = this.FormBuilder.group({
@@ -32,17 +31,14 @@ export class RegisterComponent implements OnInit{
       this.registerModel.email = this.formValue.value.email;
    
       this.apiService.createUser(this.registerModel).subscribe(res=>{
-        alert("You just created an account!");
+        alert("Account has been created!");
         this.formValue.reset();
         window.location.href = "/login"
       },
-      err=>{alert("ERROR!")
+      err=>{alert("COMPLETE ALL FIELDS!")
       this.formValue.reset();}
       )}
       
-     clickAdd() {
-  this.formValue.reset();
-      }
     }
     
     

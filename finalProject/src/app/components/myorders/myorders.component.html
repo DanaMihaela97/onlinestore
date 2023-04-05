@@ -1,0 +1,23 @@
+
+        <table class="table  table-responsive table-hover tableCart">
+            <thead>
+                <tr >
+                    <th>No.Crt</th>
+                    <th>Order Number</th>
+                    <th>Date Of Submission</th>
+                    <th>Total Cost</th>
+                    <th></th>
+                </tr>
+            </thead>
+           <tbody class ="detailsTable">
+             
+                <tr *ngFor="let order of orders; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{order.id}}</td>
+                    <td>{{order.dateOfSubmission | date : "MMM d, y, h:mm:ss a" }}</td>
+                    <td>{{order.totalCost}} LEI</td>
+                    <td (click) = "loadOrderPage(order.id)" class="detailbtn">Details</td>
+            </tbody>
+        </table> 
+
+    

@@ -59,6 +59,7 @@
     <div *ngIf="authenticated=='true'">
       <li>
         <a routerLink="/logout" ><b>LogOut</b></a>
+        
       </li>
     </div>
 
@@ -70,9 +71,19 @@
     </div>
     <div *ngIf="authenticated=='true'">
       <li>
+        <a routerLink=""><b style="white-space: nowrap;">My account</b></a>
+        <ul>
+          <li><a routerLink="/orders" style="white-space: nowrap;">My orders</a></li>
+          <li><a routerLink="/user-edit"  style="white-space: nowrap;">Edit</a></li>
+          </ul>
+      </li>
+    </div>
+    <div *ngIf="authenticated=='true'">
+      <li>
         <a routerLink = "/cart"> <img src="../assets/img/trolley.png" style="width: 30px; margin-left: 10px;"></a>
       </li>
     </div>
+    
     
   </ul>
 

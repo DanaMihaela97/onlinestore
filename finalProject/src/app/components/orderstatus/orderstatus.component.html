@@ -1,0 +1,13 @@
+
+<h1>Your order has been sent!</h1>
+<h2 >Your order status: {{order.order_status}} </h2>
+<table>
+<tr *ngFor="let product of products; let i = index">
+    <td>{{i+1}}</td>
+    <td>{{product.title}}</td>
+    <td>{{product.productType}}</td>
+    <td>{{product.author_id}}</td>
+    <td style="width: 100px;">{{product.price.toFixed(2)}} lei</td>
+</tr>
+
+</table>

@@ -21,5 +21,7 @@ ngOnInit(){
   this.user.lastName = String(window.localStorage.getItem("fullName")?.split(" ")[1])
   this.user.role = String(window.localStorage.getItem("role"))
   this.authenticated = String(window.localStorage.getItem("authenticated"))
+
 }
+
 }

@@ -21,6 +21,11 @@ import { CartComponent } from './components/cart/cart.component';
 import { ProductInfoComponent } from './components/product-info/product-info.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { BuyComponent } from './components/buy/buy.component';
+import { OrderstatusComponent } from './components/orderstatus/orderstatus.component';
+import { MyordersComponent } from './components/myorders/myorders.component';
+import { OrderInfoComponent } from './components/order-info/order-info.component';
+import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,11 @@ import { ProductEditComponent } from './components/product-edit/product-edit.com
     ProductInfoComponent,
     ProductCardComponent,
     ProductEditComponent,
+    BuyComponent,
+    OrderstatusComponent,
+    MyordersComponent,
+    OrderInfoComponent,
+    UserEditComponent,
     
 
  

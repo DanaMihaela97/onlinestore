@@ -1,14 +1,14 @@
 <h1 style="color:rgb(29, 25, 25); font-size: 40px; text-align: center; margin-top: 50px;"><strong>ALL PRODUCTS</strong>
 </h1>
 
-<div >
+<div  >
    
         <input class="search" type="text" [(ngModel)]="searchTerm" placeholder="Search Product" (change)="search()">
         <button class="btn btn-success"(click)="search()" style="margin-left: 5px;">Search</button>
     
 </div>
-<div class="products-body row">
-    <div *ngFor="let productDB of products" style="width: 35rem;">
+<div  class=" w3-container row">
+    <div  *ngFor="let productDB of products" style="width: 25rem;">
         <div class="card">
             <div class="card-body">
                 <app-product-card [product]="productDB"></app-product-card>

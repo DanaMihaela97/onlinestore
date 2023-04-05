@@ -23,8 +23,13 @@
                     </td>
                 </tr>
                 <td colspan="4"></td>
-                <td style="color:red"><strong>Total Price: {{total.toFixed(2)}} lei</strong></td>
+                <td style="color:red; white-space: nowrap;"><strong>Total Price: {{total.toFixed(2)}} lei</strong>
+                    <br> <br>
+                  
+                
             </tbody>
         </table>
+
     </div>
 </div>
+<app-buy [buyVariables] = cartVariables> </app-buy>
